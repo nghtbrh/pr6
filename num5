@@ -1,0 +1,47 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class num5 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+
+        System.out.print("введіть розмір вашого масиву: ");
+        int size = scanner.nextInt();
+
+
+        int[] array = new int[size];
+        System.out.println("масив рандом чисел:");
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt(100);
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+
+
+        boolean up = true;
+        boolean down = true;
+
+
+        for (int i = 0; i < size - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                up = false;
+            }
+            if (array[i] < array[i + 1]) {
+                down = false;
+            }
+        }
+
+
+
+        if (up) {
+            System.out.println("ваш масив впорядкован за зростанням.");
+        } else if (down) {
+            System.out.println("масив було впорядковано за спаданням.");
+        } else {
+            System.out.println("не впорядкований масив.");
+
+        }
+    }
+}
