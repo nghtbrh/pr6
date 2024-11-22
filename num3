@@ -1,0 +1,50 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class num3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+
+        System.out.print("введіть розмір вашого масиву: ");
+        int size = scanner.nextInt();
+
+
+        int[] array = new int[size];
+        System.out.println("масив рандомних чисел:");
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt(100);
+            System.out.print(array[i] + " ");
+
+        }
+        System.out.println();
+
+        System.out.print("введіть значення для пошуку: ");
+        int point = scanner.nextInt();
+
+
+        boolean lol = false;
+        for (int i = 0; i < size; i++) {
+            if (array[i] == point) {
+                lol = true;
+                System.out.print("введіть значення для заміни: ");
+                int newznach = scanner.nextInt();
+                array[i] = newznach;
+                System.out.println("значення змінилося.");
+                break;
+            }
+        }
+
+        if (!lol) {
+            System.out.println("значення не знайшлося в масиві");
+        }
+
+
+        System.out.println("масив не змінився");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}
