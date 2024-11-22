@@ -1,0 +1,23 @@
+import java.lang.Math;
+
+public class num4 {
+    public static void main(String[] args) {
+        int diya = 1;
+
+        System.out.println("таблиця sin від 0-90:");
+        int count = 0;
+
+        for (int pochat = 0; pochat <= 90; pochat += diya) {
+            double radians = Math.toRadians(pochat);
+            double sin = Math.sin(radians);
+            System.out.printf("%7.4f", sin);
+
+            count++;
+            if (count == 10) {
+                System.out.println();
+                count = 0;
+            }
+        }
+        System.out.println();
+    }
+}
