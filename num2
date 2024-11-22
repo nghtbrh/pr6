@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class num2 {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("введіть кількість ваших кутів: ");
+        int size = scanner.nextInt();
+        int[] angles = new int[size];
+        int Anglesum = 0;
+        System.out.println("введіть значення для ваших кутів : ");
+
+        for (int i = 0; i < size; i++) {
+            angles[i] = scanner.nextInt();
+            Anglesum += angles[i];
+        }
+        int ideal = 180 * (size - 2);
+        int fact = Anglesum;
+
+        System.out.println("сума кутів для ідеального многокутника: " + ideal);
+        System.out.println("сума кутів для вказаного многокутника: " + fact);
+
+        if (Anglesum == ideal) {
+            System.out.println("такой багатокутник може бути");
+
+        } else {
+
+            System.out.println("такого багатокутнику не може бути");
+        }
+    }
+}
